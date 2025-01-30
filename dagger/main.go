@@ -51,5 +51,5 @@ func (m *HelloDagger) BuildEnv(source *dagger.Directory) *dagger.Container {
 		WithMountedCache("/root/.npm", nodeCache).
 		WithExec([]string{"echo", "hello"}).
 		WithWorkdir("/src").
-		WithExec([]string{"npm", "install"})
+		WithExec([]string{"npm", "install", "--cache", "/root/.npm"})
 }
