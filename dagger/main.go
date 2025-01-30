@@ -49,7 +49,7 @@ func (m *HelloDagger) BuildEnv(source *dagger.Directory) *dagger.Container {
 		From("node:21-slim").
 		WithDirectory("/src", source).
 		WithMountedCache("/root/.npm", nodeCache).
-		WithExec([]string{"echo", "hellooooo"}).
+		WithExec([]string{"echo", "hellop"}).
 		WithWorkdir("/src").
 		WithExec([]string{"npm", "install", "--cache", "/root/.npm"})
 }
