@@ -14,7 +14,7 @@ type HelloDagger struct{}
 // Publish the application container after building and testing it on-the-fly
 func (m *HelloDagger) Publish(
 	ctx context.Context, 
-	// +ignore=[".git*"]
+	// +ignore=[".git*", "README.md"]
 	source *dagger.Directory,
 ) (string, error) {
 	_, err := m.Test(ctx, source)
