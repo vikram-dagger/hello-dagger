@@ -14,7 +14,7 @@ type HelloDagger struct{}
 // Publish the application container after building and testing it on-the-fly
 func (m *HelloDagger) Publish(
 	ctx context.Context, 
-	// +ignore=[".git*", "README.md"]
+	// +ignore=[".git*"]
 	source *dagger.Directory,
 ) (string, error) {
 	_, err := m.Test(ctx, source)
@@ -49,7 +49,6 @@ func (m *HelloDagger) BuildEnv(source *dagger.Directory) *dagger.Container {
 		From("node:21-slim").
 		WithDirectory("/src", source).
 		WithMountedCache("/root/.npm", nodeCache).
-		WithExec([]string{"echo", "helloq"}).
 		WithWorkdir("/src").
-		WithExec([]string{"npm", "install", "--cache", "/root/.npm"})
+		WithExec([]string{"npm", "install"})
 }
