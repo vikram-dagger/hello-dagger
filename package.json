@@ -66,7 +66,7 @@
     "video.js": "4.11.4",
     "videojs-youtube": "1.2.10",
     "webtorrent": "^1.9.7",
-    "webtorrent-health": "1.x.x"    
+    "webtorrent-health": "1.x.x"
   },
   "devDependencies": {
     "@rushstack/eslint-patch": "^1.8.0",
